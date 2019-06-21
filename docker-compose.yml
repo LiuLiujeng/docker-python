@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  app:
+    image: "${USERNAME}/${IMAGE}:latest"
+    volumes:
+        - .:/app
+    build:
+      context: .
+      args:
+          SOURCE_CODE: .
+    entrypoint:
+        ["python", "startup.py"]
