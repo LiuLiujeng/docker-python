@@ -6,9 +6,7 @@ WORKDIR /app
 
 COPY $SOURCE_CODE /app/
 
-RUN apt-get update \
-    && apt-get upgrade \
-    && apt-get clean
+RUN apt-get update
 
 RUN pip install -r requirements.txt \
     && python3.7 -V
